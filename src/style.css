@@ -1,0 +1,69 @@
+/* CSS file */
+@namespace s "library://ns.adobe.com/flex/spark";
+@namespace view "view.*";
+@namespace container "view.container.*";
+@namespace component "view.component.*";
+
+container|InitializeView { skinClass: ClassReference("view.skin.phone.InitializeSkin"); }
+container|MenuView { skinClass: ClassReference("view.skin.phone.MenuSkin"); }
+container|QuizView { skinClass: ClassReference("view.skin.phone.QuizSkin"); }
+
+component|ValueButton { skinClass: ClassReference("view.skin.ValueButtonSkin"); }
+
+@media(os-platform:"IOS")
+{
+	s|ActionBar
+	{
+		defaultButtonAppearance:beveled;
+	}
+	
+	.backButton
+	{
+		skinClass:ClassReference("spark.skins.mobile.BeveledBackButtonSkin");
+	}
+}
+
+/* Every os-platform @ 160dpi */
+@media (application-dpi: 160)
+{
+	s|Button
+	{
+		fontSize: 10;
+	}
+}
+
+/* IOS only @ 240dpi */
+@media (application-dpi: 240) and (os-platform: "IOS")
+{
+	s|Button
+	{
+		fontSize: 11;
+	}
+}
+
+/* IOS at 160dpi or Android @ 160dpi */
+@media (os-platform: "IOS") and (application-dpi:160), (os-platform: "ANDROID") and (application-dpi: 160)
+{
+	s|Button
+	{
+		fontSize: 13;        
+	}
+}
+
+/* Every os-platform except Android @ 240dpi */
+@media not all and (application-dpi: 240) and (os-platform: "ANDROID")
+{
+	s|Button
+	{
+		fontSize: 12;
+	}
+}    
+
+/* Every os-platform except IOS @ any DPI */
+@media not all and (os-platform: "IOS")
+{
+	s|Button
+	{
+		fontSize: 14;        
+	}
+}

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<swiz:BeanProvider 
+   	xmlns:fx="http://ns.adobe.com/mxml/2009" 
+   	xmlns:s="library://ns.adobe.com/flex/spark" 
+   	xmlns:swiz="http://swiz.swizframework.org"
+   	>
+
+    <fx:Script>
+        <![CDATA[
+            public static const AUTH:String = 'auth';
+            public static const STARTUP:String = 'startup';
+            public static const USER:String = 'user';
+            public static const PROVIDER:String = 'provider';
+        ]]>
+    </fx:Script>
+
+    <fx:Declarations>
+
+		<s:RemoteObject id="startup" destination="amfphp" source="QuizzService" showBusyCursor="true" />
+
+    </fx:Declarations>
+
+    <!--<business:StartupDelegate id="startupDelegate"/>-->
+    <!--<business:StartupDelegateMock id="startupDelegate" />-->
+
+</swiz:BeanProvider>
