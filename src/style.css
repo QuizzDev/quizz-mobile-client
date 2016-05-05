@@ -1,14 +1,14 @@
 /* CSS file */
 @namespace s "library://ns.adobe.com/flex/spark";
-@namespace view "view.*";
-@namespace container "view.container.*";
-@namespace component "view.component.*";
+@namespace view "interfaces.*";
+@namespace container "interfaces.container.*";
+@namespace component "interfaces.component.*";
 
-container|InitializeView { skinClass: ClassReference("view.skin.phone.InitializeSkin"); }
-container|MenuView { skinClass: ClassReference("view.skin.phone.MenuSkin"); }
-container|QuizView { skinClass: ClassReference("view.skin.phone.QuizSkin"); }
+container|InitializeView { skinClass: ClassReference("interfaces.skin.phone.InitializeSkin"); }
+container|MenuView { skinClass: ClassReference("interfaces.skin.phone.MenuSkin"); }
+container|QuizView { skinClass: ClassReference("interfaces.skin.phone.QuizSkin"); }
 
-component|ValueButton { skinClass: ClassReference("view.skin.ValueButtonSkin"); }
+component|ValueButton { skinClass: ClassReference("interfaces.skin.ValueButtonSkin"); }
 
 @media(os-platform:"IOS")
 {

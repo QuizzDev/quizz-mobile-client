@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<swiz:BeanProvider
+        xmlns:fx="http://ns.adobe.com/mxml/2009"
+        xmlns:s="library://ns.adobe.com/flex/spark"
+        xmlns:swiz="http://swiz.swizframework.org"
+        xmlns:model="domain.model.*"
+        xmlns:application="application.*"
+>
+
+    <!--
+    <fx:Metadata>
+		[ResourceBundle("global")]
+	</fx:Metadata>
+	-->
+
+    <fx:Script>
+        <![CDATA[
+        import domain.model.QuizFactory;
+
+        /*
+
+         private var authDelegate:IAuthDelegate;
+
+         CONFIG::release
+         {
+         trace('RELEASE');
+
+         authDelegate = new AuthDelegate();
+         addBean(authDelegate);
+         }
+
+         (CONFIG::release != true)
+         {
+         trace('NO RELEASE');
+
+         authDelegate = new AuthDelegateMock();
+         addBean(authDelegate);
+         }
+
+         */
+        ]]>
+    </fx:Script>
+
+    <swiz:SharedObjectBean id="quizzSO" />
+
+    <application:AppModel id="model" />
+    <model:QuestionPool id="questionPool" />
+    <swiz:Prototype
+        id="quizFactory"
+        type="{ QuizFactory }"
+        constructorArguments="{ questionPool }"
+        />
+
+    <application:ViewManager id="viewManager" />
+    <application:AppController id="appController" />
+
+</swiz:BeanProvider>

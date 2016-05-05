@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:Application
+    xmlns:fx="http://ns.adobe.com/mxml/2009"
+    xmlns:s="library://ns.adobe.com/flex/spark"
+    xmlns:swiz="http://swiz.swizframework.org"
+    xmlns:config="application.config.*"
+    applicationDPI="160"
+    resizeForSoftKeyboard="true"
+    >
+
+    <fx:Declarations>
+        <config:SwizSetup />
+    </fx:Declarations>
+
+    <fx:Style source="../../style.css" />
+
+    <s:ViewNavigator
+        width="100%" height="100%"
+        firstView="interfaces.container.InitializeView"
+    />
+
+</s:Application>
